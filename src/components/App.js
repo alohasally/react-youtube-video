@@ -25,9 +25,9 @@ export default function App() {
     setSelectedVideo(response.data.items[0])
   };
 
-  const onVideoSelect = (video) => {
-    setSelectedVideo(video);
-  };
+  // const onVideoSelect = (video) => {
+  //   setSelectedVideo(video);
+  // };
 
   return (
   
@@ -40,7 +40,8 @@ export default function App() {
             </div>
             <div className="five wide column">
               <VideoList
-                onVideoSelect={onVideoSelect}
+                // onVideoSelect={(video) => setSelectedVideo(video)}
+                onVideoSelect={setSelectedVideo}
                 videos={videos}
               />
             </div>
