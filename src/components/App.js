@@ -15,14 +15,18 @@ export default function App() {
   
 
   const onTermSubmit = async (term) => {
-    const response = await youtube.get("/search", {
-      params: {
-        q: term,
-      },
-    });
-
-    setVideos(response.data.items);
-    setSelectedVideo(response.data.items[0])
+    try{
+      const response = await youtube.get("/search", {
+        params: {
+          q: term,
+        },
+      });
+      setVideos(response.data.items);
+      setSelectedVideo(response.data.items[0])
+    } catch (error) {
+      console.log(error);
+    }
+  
   };
 
   // const onVideoSelect = (video) => {
